@@ -4,14 +4,19 @@
   "description": "Technical Test",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "node_modules\\.bin\\cypress open",
+    "cy:run": "node_modules\\.bin\\cypress run",
+    "cy:headrun": "npm run cy:run -- --headed",
+    "cy:chromerun": "npm run cy:run -- --browser chrome",
+    "singletest": "npm run cy:run -- -- TechTestWeb\\cypress\\integration\\testAutomation.feature",
+    "qaenv": "CYPRESS_BASE_URL = http://QA.willistowerswatson.com npm run cy:run -- --record",
+    "cy:dashboard": "npm run cy:run -- --record --key CYPRESS_RECORD_KEY"
   },
   "author": "Imran Khan",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^6.8.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "cypress": "^6.8.0",
     "cypress-cucumber-preprocessor": "^4.0.3"
   },
   "cypress-cucumber-preprocessor": {
